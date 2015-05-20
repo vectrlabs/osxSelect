@@ -82,8 +82,8 @@
         user-select: none; /* required */
       }
       .menu_item.selected {
-        background: #000;
-        color: #fff;
+        background: #000 !important;
+        color: #fff !important;
       }
       .menu_item .menu {
         float: left;
@@ -238,7 +238,10 @@
 
         $('.top_level_menu').osxSelect({
           selector: '.menu_item',
-          multi: true
+          multi: true,
+          onSelectionChange: function() {
+            console.log('callback dawg')
+          }
         });
 
       });
